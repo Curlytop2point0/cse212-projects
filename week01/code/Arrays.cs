@@ -6,14 +6,28 @@ public static class Arrays
     /// integer greater than 0.
     /// </summary>
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
+    /// 
+    //Plan for Arrays
+    //Step 1: Create an array to hold the multiples.
+    //Step 2: Loop through each position in the array.
+    //Step 3: Compute the multiple by multiplying number with i + 1.
+    //Step 4: Return the array filled with multiples.
     public static double[] MultiplesOf(double number, int length)
     {
-        // TODO Problem 1 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+    
+        // Step 1: Create an array to hold the multiples
+        double[] multiplesArray = new double[length];
 
-        return []; // replace this return statement with your own
+        // Step 2: Loop through each position in the array
+        for (int i = 0; i < length; i++)
+        {
+
+        // Step 3: Compute the multiple by multiplying 'number'
+        multiplesArray[i] = number * (i + 1);
+        }
+
+        // Step 4: Return the array filled with multiples
+        return multiplesArray;
     }
 
     /// <summary>
@@ -23,11 +37,29 @@ public static class Arrays
     ///
     /// Because a list is dynamic, this function will modify the existing data list rather than returning a new list.
     /// </summary>
+    /// 
+    //Plan for Solving a Complicated Problem Using a List
+    //Step 1: Calculate the effective rotation amount.
+    //Step 2: Reverse the entire list.
+    //Step 3: Reverse the first amount elements.
+    //Step 4: Reverse the remaining elements from 'amount' to the end.
+    //Step 5: The original list 'data' is now rotated in place.
     public static void RotateListRight(List<int> data, int amount)
     {
-        // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        // Step 1: Calculate the effective rotation amount
+        int n = data.Count;
+        amount = amount % n;
+        if (amount == 0) return;
+
+        // Step 2: Reverse the entire list
+        data.Reverse(0, n);
+
+        // Step 3: Reverse the first amount elements
+        data.Reverse(0, amount);
+
+        // Step 4: Reverse the remaining elements from 'amount' to the end
+        data.Reverse(amount, n - amount);
+
+        // Step 5: The original list 'data' is now rotated in place
     }
 }
